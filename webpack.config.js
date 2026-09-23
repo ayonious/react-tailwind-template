@@ -4,6 +4,7 @@ module.exports = {
   entry: './src/index.tsx',
   module: {
     rules: [
+      { test: /\.css$/, use: ['style-loader', 'css-loader', 'postcss-loader'] },
       {
         test: /\.(tsx|ts|js)$/,
         exclude: /node_modules/,

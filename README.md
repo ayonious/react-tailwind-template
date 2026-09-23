@@ -1,40 +1,38 @@
-# Typescript React Project Template
+# React + Tailwind CSS starter
 
-[![CI](https://github.com/ayonious/template-react-ts/workflows/CI/badge.svg)](https://github.com/ayonious/template-react-ts/actions)
+A minimal React and TypeScript starter with Webpack, Babel, and Tailwind CSS 4.
 
-> a bare minimum Typescripted react Project. Without using create-react-app
+## What is included?
 
-## 🤷 Why is this needed?
+- **React** builds the page from reusable UI components. The starter component is in `src/components/Dashboard.tsx`.
+- **TypeScript** adds type checking to JavaScript, helping catch mistakes before the app runs. Run `yarn typecheck` to check the project.
+- **Babel** turns the TypeScript and JSX syntax into JavaScript that Webpack can bundle. Its presets are listed in `.babelrc`.
+- **Webpack** bundles the app's JavaScript and CSS for the browser. It also runs the development server and creates the production files in `dist/`.
+- **Tailwind CSS** provides utility classes, such as `bg-slate-50` and `text-4xl`, for styling components directly in JSX. `src/styles.css` imports Tailwind, and PostCSS processes it during the Webpack build.
 
-This is a template project for me to bootstrap all other react projects. 
+The project also uses **Prettier** to format files and **Yarn** to install dependencies from `yarn.lock`.
 
-## 🔍 This contains:
+## Requirements
 
-1. Babbel
-2. Webpack
-3. React
-4. Typescript
+Node.js 22.18+ (22.x) or 24.11+, and Yarn Classic 1.22.22.
 
-Also contains small tools:
+## Development
 
-1. prettier and husky (format when you push)
-2. .gitignore
-3. renovate bot config
-
-## 🏃 Running instruction
-
-### Devmode
-
-```bash
-npm install
-npm run start
+```sh
+yarn install --frozen-lockfile
+yarn start
 ```
 
-### Make Production build
+Edit `src/components/Dashboard.tsx` and use Tailwind utility classes directly in JSX.
+`src/styles.css` imports Tailwind; `postcss.config.js` connects it to Webpack.
+Tailwind automatically detects classes in source files; no Tailwind config is required.
 
-```bash
-npm install
-npm run build
+## Checks and production build
+
+```sh
+yarn typecheck
+yarn build
 ```
 
-Then open the dist/index.html file on your browser
+The production bundle is written to `dist/`. Serve that directory with a static web server.
+Run `yarn format` to format source and configuration files with Prettier.
